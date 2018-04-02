@@ -12,11 +12,13 @@
 \usepackage[round]{natbib}
 \usepackage{pdfpages}
 \usepackage{fancyvrb}
-\usepackage[parfill]{parskip}
+% \usepackage[parfill]{parskip}
 % \usepackage{titlesec}
 \usepackage{listings}
 % \usepackage{graphicx}
 % \usepackage{float}
+% \usepackage[british]{babel}
+% \usepackage{csquotes}
 % -
 
 % Configuration
@@ -71,29 +73,46 @@
 % Introduction
 \pagebreak
 \section{Introduction}
-\begin{todoenv}
-  write an introduction here...
-  \begin{enumerate}[label=(\alph*)]
-    \item talk about Thales
-    \item talk about Project IndiCon
-    \item mention the scenario
-    \item talk about the project phases
-  \end{enumerate}
-\end{todoenv}
+Thales has been contracted to deliver a `secured by design` SCADA \textit{(Supervisory Control and Data Acquisition)} system for a power generator in the UK. The client has significant concerns about the cyber resilience of this SCADA system as it will be deployed in a CNI \textit{(Critical National Infrastructure)} environment.
+
+Thales, acting as both end customer and prime contractor, have approached the NCSA \textit{(National Cyber Security Academy)} and its associates with \textit{Project `IndiCon`}. This project involves, in Phase 1, conducting research into SCADA architectures for CNI, IIoT \textit{(Industrial Internet of Things)}, the security issues/vulnerabilities that SCADA systems are exposed to, and identifying PLCs \textit{(Programmable Logic Controllers)} for future detailed assessment and testing as part of Phase 2.
+
+\todo{In this report, I will...}
+
+% \pagebreak
+\section{SCADA/CNI Definitions and Overview}
+\subsection{Supervisory Control and Data Acquisition}
+SCADA systems are a type of Industrial Control System \textit{(ICS)} that can be used to control industrial processes such as manufacturing, refining, or power generation; infrastructure processes such as water treatment, gas pipelines, and wind farms; and facility-based processes such as airports, space stations, or ships \citep{site:scadasystems}.
+
+SCADA can be used to control processes that are limited geographically to a single site (such as a water treatment plant) and processes that are distributed across multiple sites (such as a gas pipeline network).
+
+\subsection{Critical National Infrastructure}
+There national infrastructure sectors in the UK are Chemicals, Civil Nuclear, Communications, Defence, Emergency Services, Energy, Finance, Food, Government, Health, Space, Transport, and Water. Some elements within these sectors are deemed to be CNI.
+
+CNI is defined officially by the UK government as being ``those critical elements of national infrastructure (facilities, systems, sites, property, information, people, networks and processes), the loss or compromise of which would result in major detrimental impact on the availability, delivery or integrity of essential services, leading to severe economic or social consequences or to loss of life'' \citep{site:cpni:cni}.
 
 \pagebreak
-\section{SCADA Overview}
-\todo{detail what SCADA is in brief here}
+% \section{Typical SCADA Architectures for CNI}
+\section{Typical SCADA Architectures}
+\subsection{Building Blocks and Concept of Operations}
+SCADA systems are composed from five essential parts \citep{site:allaboutcircuits:scadaintro:20150831,site:infosecinst:scadacritical:20130222}:
+\begin{itemize}
+  \item RTUs \textit{(Remote Terminal Units)} collect data from sensors, converting it into digital data that can be fed into the SCADA system. This data can be used by the supervisory system and PLCs as input to make sure that the process is operating correctly or to detect when a change should be made automatically.
+  \item PLCs \textit{(Programmable Logic Controllers)}, also known as Smart RTUs, can also handle sensory input. However, unlike RTUs, they are able to perform simple logical calculations without the aid of the supervisory system and can use the results of these calculations to modify the operation of the physical system they are connected to via relays, et cetera. Human operators can modify the functionality of the PLCs remotely from the command centre or from HMI control interfaces attached to physical systems on the site.
+  \item A supervisory system that is responsible for collating the data acquired by the SCADA system and issuing automatic control signals to manage the process. The supervisory system's parameters can also be adjusted by human operators as required.
+  \item HMIs \textit{(Human-Machine Interfaces)} present data from the SCADA system to the human operators and allows them to make changes to the operation of the SCADA system by issuing commands to the supervisory system and PLCs. The data shown on HMIs is often rendered into a graphical format to make it easier to understand.
+  \item A communication infrastructure to connect all of the above components. These can be cabled or wireless (if the sensors are remote or the SCADA system is distributed). Modbus is the de facto standard communication used for communicating with PLCs in SCADA systems.
+\end{itemize}
 
-\pagebreak
-\section{Typical SCADA Architectures for CNI}
-\begin{todoenv}
-  \begin{enumerate}[label=(\alph*)]
-    \item what are the building blocks --- Control Systems, GUIs, PLCs, RTUs, Communications infrastructure, etc.
-    \item concept of operations - how the systems work (together...)
-    \item industrial, distributed control systems!
-  \end{enumerate}
-\end{todoenv}
+% \subsection{Concept of Operations}
+% \todo{blaaaaah}
+
+\subsection{Industrial Distributed Control Systems}
+\todo{moreblah}
+
+% \subsection{Considerations for CNI}
+% \todo{bleuuugh}
+
 
 \pagebreak
 \section{SCADA and Industrial IoT}
