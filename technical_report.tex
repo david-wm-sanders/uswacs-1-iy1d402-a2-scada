@@ -99,29 +99,40 @@ SCADA systems are composed from five essential parts \citep{site:allaboutcircuit
 \begin{itemize}
   \item RTUs \textit{(Remote Terminal Units)} collect data from sensors, converting it into digital data that can be fed into the SCADA system. This data can be used by the supervisory system and PLCs as input to make sure that the process is operating correctly or to detect when a change should be made automatically.
   \item PLCs \textit{(Programmable Logic Controllers)}, also known as Smart RTUs, can also handle sensory input. However, unlike RTUs, they are able to perform simple logical calculations without the aid of the supervisory system and can use the results of these calculations to modify the operation of the physical system they are connected to via relays, et cetera. Human operators can modify the functionality of the PLCs remotely from the command centre or from HMI control interfaces attached to physical systems on the site.
-  \item A supervisory system that is responsible for collating the data acquired by the SCADA system and issuing automatic control signals to manage the process. The supervisory system's parameters can also be adjusted by human operators as required.
+  \item A supervisory system that is responsible for collating the data acquired by the SCADA system and issuing automatic control signals to manage the process. The supervisory system's parameters can also be adjusted by human operators as required. The supervisory system acts as a bridge between the HMI software and the PLCs/RTUs that make up the SCADA system.
   \item HMIs \textit{(Human-Machine Interfaces)} present data from the SCADA system to the human operators and allows them to make changes to the operation of the SCADA system by issuing commands to the supervisory system and PLCs. The data shown on HMIs is often rendered into a graphical format to make it easier to understand.
   \item A communication infrastructure to connect all of the above components. These can be cabled or wireless (if the sensors are remote or the SCADA system is distributed). Modbus is the de facto standard communication used for communicating with PLCs in SCADA systems.
 \end{itemize}
 
-% \subsection{Concept of Operations}
-% \todo{blaaaaah}
-
-\subsection{Industrial Distributed Control Systems}
-\todo{moreblah}
+% \subsection{Industrial Distributed Control Systems}
+% \todo{moreblah}
 
 % \subsection{Considerations for CNI}
 % \todo{bleuuugh}
 
-
 \pagebreak
-\section{SCADA and Industrial IoT}
+\section{Connectivity Trends}
 \begin{todoenv}
   \begin{enumerate}[label=(\alph*)]
     \item connectivity trends
     \item improved interoperability and reduced costs
   \end{enumerate}
 \end{todoenv}
+
+\subsection{Generations of SCADA}
+SCADA architectures have developed over the years, with increasing connectivity over time a common theme. These architectures can be split into four distinct different generations \citep{site:edgefxkits:scada:20141014}.
+\subsubsection*{Generation 1: Monolithic}
+Early SCADA systems were developed at a time when common networks did not exist. Due to this, these systems were independent and did not have connectivity to other systems on the site or further afield. Redundancy was achieved by having two mainframes so that if the primary mainframe system failed the backup mainframe could take over control.
+
+In first generation SCADA systems, functionality was generally limited to monitoring sensors in the system and raising alarms if the process deviated from the pre-programmed settings.
+\subsubsection*{Generation 2: Distributed}
+LANs \textit{(Local Area Networks)} were introduced in second generation SCADA systems. Control functions were distributed across devices that were connected via the LAN. In these systems, the LAN is physically separated from other communications infrastructure on the site.
+
+However, during this generation, the network protocols were still proprietary and not standardised.
+\subsubsection*{Generation 3: Networked}
+
+\subsubsection*{Generation 4: Internet of Things}
+
 
 \pagebreak
 \section{Security Issues and Vulnerabilities}
