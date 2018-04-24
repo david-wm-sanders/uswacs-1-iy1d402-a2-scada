@@ -77,7 +77,7 @@ Thales has been contracted to deliver a `secured by design` SCADA \textit{(Super
 
 Thales, acting as both end customer and prime contractor, have approached the NCSA \textit{(National Cyber Security Academy)} and its associates with \textit{Project `IndiCon`}. This project involves, in Phase 1, conducting research into SCADA architectures for CNI, IIoT \textit{(Industrial Internet of Things)}, the security issues/vulnerabilities that SCADA systems are exposed to, and identifying PLCs \textit{(Programmable Logic Controllers)} for future detailed assessment and testing as part of Phase 2.
 
-\todo{In this report, I will...}
+% \todo{In this report, I will...}
 
 % \pagebreak
 \section{SCADA/CNI Definitions and Overview}
@@ -112,12 +112,12 @@ SCADA systems are composed from five essential parts \citep{site:allaboutcircuit
 
 \pagebreak
 \section{Connectivity Trends}
-\begin{todoenv}
-  \begin{enumerate}[label=(\alph*)]
-    \item connectivity trends
-    \item improved interoperability and reduced costs
-  \end{enumerate}
-\end{todoenv}
+% \begin{todoenv}
+%   \begin{enumerate}[label=(\alph*)]
+%     \item connectivity trends
+%     \item improved interoperability and reduced costs
+%   \end{enumerate}
+% \end{todoenv}
 
 \subsection{Generations of SCADA}
 SCADA architectures have developed over the years, with increasing connectivity over time a common theme. These architectures can be split into four distinct different generations \citep{site:edgefxkits:scada:20141014}.
@@ -130,9 +130,13 @@ LANs \textit{(Local Area Networks)} were introduced in second generation SCADA s
 
 However, during this generation, the network protocols were still proprietary and not standardised.
 \subsubsection*{Generation 3: Networked}
+Third generation SCADA systems introduced common communication networks. Multiple distributed SCADA systems could be connected to a single supervisor and historian -- making large scale systems more cost effective than in previous generations.
 
+Previous generations of SCADA systems had less security risks because they were isolated from other networks.
 \subsubsection*{Generation 4: Internet of Things}
+Recently, a fourth generation of SCADA system has begun to emerge. These new SCADA systems can leverage commercially available cloud computing to allow for the use of more complex control algorithms (that would be infeasible to implement on PLCs). As these fourth generation systems become more common, maintenance and integration costs and complexity will continue to fall.
 
+These systems also attempt to reduce the security risks of using proprietary network protocols by deploying protocols such as TLS to protect this traffic in transit between the physical SCADA system and cloud operations.
 
 \pagebreak
 \section{Security Issues and Vulnerabilities}
