@@ -149,12 +149,30 @@ These systems also attempt to reduce the security risks of using proprietary net
 \end{todoenv}
 
 \pagebreak
-\section{Future Research Options}
-blah
+\section{Devices for Future Detailed Assessment}
+The requirement is to propose up to 5 PLC devices that could be used in CNI for further assessment and testing in Phase 2 of the project.
+
+Initially, to assist with identifying potentially suitable PLCs a review of the marketplace of manufacturers was carried out. There is an extensive range of manufacturers, from major international companies to smaller more specialised national companies. There is also a broad range of specialisation. In an attempt to narrow the field, 7 companies were selected. Those selected are all major (or part of major) international companies, which all appear on initial to have expertise in the fields of the power generation and transmission. As such it seems likely that they would have products suitable for this application, not just in terms of being able to supply ruggedized PLCs with capacity for implementing changes, which are robust and compact in design, have reduced maintenance requirements, are easily programmed, and where a variety of programming languages may be expected to be available. They are also more likely to able to supply PLCs that have a higher level of cyber resilience. The requirement for cyber resilience and security (given the project is part of the UK CNI) has meant that companies with a China or Russia connection have been excluded.
+
+The 7 companies chosen form a shortlist from which preferred suitable products will be chosen and are Rockwell Automation/Allen-Bradley, Siemens, ABB, Alstom, General Electric, Modicon (part of Schneider Electric) and Thomson SA.
+
+The project asks that legacy equipment be considered. Establishing a database of legacy systems appears problematic, although given the time and resources this could be undertaken. There is one legacy equipment that can be discarded (at least in the form it was available in 2011) and that is Siemens' S7-300/S7-1200. In preparation for Black Hat, Dillon \citet{pdf:blackhat:siemensscada:20110711} published a paper titled \textit{"Exploiting Siemens Simatic S7 PLCs"}, in which he detailed how significant errors in the implementations of the security mechanisms deployed could be exploited to take control of the PLCs.
+
+What this shows, however, is the need to subject candidate PLCs to a process of resilience testing involving or based on the practice of the US-CERT \textit{(United States Computer Emergency Readiness Team)} and/or \citet{site:ics-cert:standards:20180427}.
+
+The product ranges of the 7 companies have been examined with the following results:
+\subsection{Rockwell Automation/Allen-Bradley PLCs}
+Rockwell Automation/Allen-Bradley supply programmable controllers for large industrial control systems to fit the most demanding application needs. They are designed for distributed or supervisory control applications -- the \href{https://ab.rockwellautomation.com/IO/Chassis-Based/1756-ControlLogix-IO}{\textbf{1756 ControlLogix\textregistered Modules}} \textit{(Chassis, Digital I/O, Analogue I/O, Speciality I/O, Communications, and Compute)} would be a suitable contender for further examination.
+\subsection{Siemens PLCs}
+Siemens offer a range of SIMATIC Controllers, including the \href{https://www.siemens.com/global/en/home/products/automation/systems/industrial/plc/simatic-s7-1500.html}{\textbf{SIMATIC S7-1500 Advanced Controller}} for medium-sized and complex applications. Also available is the \href{https://w3.siemens.com/mcms/distributed-io/en/pages/default.aspx}{\textbf{SIMATIC ET200 Distributed Controller}} for distributed applications. Among other features, Siemens emphasise their Security Integrated approach, which provides Knowledge Protection together with protection against copying and manipulation and extra password protection for access to program content. This would also be a suitable contender for further examination.
+\subsection{ABB PLCs}
+Within their \href{http://new.abb.com/plc/programmable-logic-controllers-plcs/ac500}{\textbf{AC500}} range, ABB offer solutions for high-end applications and some of these devices might also be worth investigating.
+\subsection{General Electric PLCs}
+GE's \href{http://www.geautomation.com/products/pacsystems-rx3i-controller}{\textbf{PACSystems* RX3i}} range appears to have built-in security protocols and a broad suite of cyber security technology and tools to protect against attacks, prevent unauthorised code and application updates, and protect against DOS \textit{(denial-of-service)} attacks. These technologies could be further tested to see if they meet the cyber resilience criteria for CNI applications.
 
 \pagebreak
 \section{Conclusions}
-blah
+illusions of conclusions...
 
 
 
