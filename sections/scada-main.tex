@@ -1,0 +1,180 @@
+\section{Introduction}
+Thales has been contracted to deliver a `secured by design` SCADA \textit{(Supervisory Control and Data Acquisition)} system for a power generator in the UK. The client has significant concerns about the cyber resilience of this SCADA system as it will be deployed in a CNI \textit{(Critical National Infrastructure)} environment.
+
+Thales, acting as both end customer and prime contractor, have approached the NCSA \textit{(National Cyber Security Academy)} and its associates with \textit{Project `IndiCon`}. This project involves, in Phase 1, conducting research into SCADA architectures for CNI, IIoT \textit{(Industrial Internet of Things)}, the security issues/vulnerabilities that SCADA systems are exposed to, and identifying PLCs \textit{(Programmable Logic Controllers)} for future detailed assessment and testing as part of Phase 2.
+
+% \todo{In this report, I will...}
+
+% \pagebreak
+\section{SCADA/CNI Definitions and Overview}
+\subsection{Supervisory Control and Data Acquisition}
+SCADA systems are a type of Industrial Control System \textit{(ICS)} that can be used to control industrial processes such as manufacturing, refining, or power generation; infrastructure processes such as water treatment, gas pipelines, and wind farms; and facility-based processes such as airports, space stations, or ships \citep{site:scadasystems}.
+
+SCADA can be used to control processes that are limited geographically to a single site (such as a water treatment plant) and processes that are distributed across multiple sites (such as a gas pipeline network).
+
+\subsection{Critical National Infrastructure}
+There national infrastructure sectors in the UK are Chemicals, Civil Nuclear, Communications, Defence, Emergency Services, Energy, Finance, Food, Government, Health, Space, Transport, and Water. Some elements within these sectors are deemed to be CNI.
+
+CNI is defined officially by the UK government as being ``those critical elements of national infrastructure (facilities, systems, sites, property, information, people, networks and processes), the loss or compromise of which would result in major detrimental impact on the availability, delivery or integrity of essential services, leading to severe economic or social consequences or to loss of life'' \citep{site:cpni:cni}.
+
+\pagebreak
+% \section{Typical SCADA Architectures for CNI}
+\section{Typical SCADA Architectures}
+\subsection{Building Blocks and Concept of Operations}
+SCADA systems are composed from five essential parts \citep{site:allaboutcircuits:scadaintro:20150831,site:infosecinst:scadacritical:20130222}:
+\begin{itemize}
+  \item RTUs \textit{(Remote Terminal Units)} collect data from sensors, converting it into digital data that can be fed into the SCADA system. This data can be used by the supervisory system and PLCs as input to make sure that the process is operating correctly or to detect when a change should be made automatically.
+  \item PLCs \textit{(Programmable Logic Controllers)}, also known as Smart RTUs, can also handle sensory input. However, unlike RTUs, they are able to perform simple logical calculations without the aid of the supervisory system and can use the results of these calculations to modify the operation of the physical system they are connected to via relays, et cetera. Human operators can modify the functionality of the PLCs remotely from the command centre or from HMI control interfaces attached to physical systems on the site.
+  \item A supervisory system that is responsible for collating the data acquired by the SCADA system and issuing automatic control signals to manage the process. The supervisory system's parameters can also be adjusted by human operators as required. The supervisory system acts as a bridge between the HMI software and the PLCs/RTUs that make up the SCADA system.
+  \item HMIs \textit{(Human-Machine Interfaces)} present data from the SCADA system to the human operators and allows them to make changes to the operation of the SCADA system by issuing commands to the supervisory system and PLCs. The data shown on HMIs is often rendered into a graphical format to make it easier to understand.
+  \item A communication infrastructure to connect all of the above components. These can be cabled or wireless (if the sensors are remote or the SCADA system is distributed). Modbus is the de facto standard communication used for communicating with PLCs in SCADA systems.
+\end{itemize}
+
+% \subsection{Industrial Distributed Control Systems}
+% \todo{moreblah}
+
+% \subsection{Considerations for CNI}
+% \todo{bleuuugh}
+
+\pagebreak
+\section{Connectivity Trends}
+% \begin{todoenv}
+%   \begin{enumerate}[label=(\alph*)]
+%     \item connectivity trends
+%     \item improved interoperability and reduced costs
+%   \end{enumerate}
+% \end{todoenv}
+
+\subsection{Generations of SCADA}
+SCADA architectures have developed over the years, with increasing connectivity over time a common theme. These architectures can be split into four distinct different generations \citep{site:edgefxkits:scada:20141014}.
+\subsubsection*{Generation 1: Monolithic}
+Early SCADA systems were developed at a time when common networks did not exist. Due to this, these systems were independent and did not have connectivity to other systems on the site or further afield. Redundancy was achieved by having two mainframes so that if the primary mainframe system failed the backup mainframe could take over control.
+
+In first generation SCADA systems, functionality was generally limited to monitoring sensors in the system and raising alarms if the process deviated from the pre-programmed settings.
+\subsubsection*{Generation 2: Distributed}
+LANs \textit{(Local Area Networks)} were introduced in second generation SCADA systems. Control functions were distributed across devices that were connected via the LAN. In these systems, the LAN is physically separated from other communications infrastructure on the site.
+
+However, during this generation, the network protocols were still proprietary and not standardised.
+\subsubsection*{Generation 3: Networked}
+Third generation SCADA systems introduced common communication networks. Multiple distributed SCADA systems could be connected to a single supervisor and historian -- making large scale systems more cost effective than in previous generations.
+
+Previous generations of SCADA systems had less security risks because they were isolated from other networks.
+\subsubsection*{Generation 4: Internet of Things}
+Recently, a fourth generation of SCADA system has begun to emerge. These new SCADA systems can leverage commercially available cloud computing to allow for the use of more complex control algorithms (that would be infeasible to implement on PLCs). As these fourth generation systems become more common, maintenance and integration costs and complexity will continue to fall.
+
+These systems also attempt to reduce the security risks of using proprietary network protocols by deploying protocols such as TLS to protect this traffic in transit between the physical SCADA system and cloud operations.
+
+\pagebreak
+\section{Security Issues and Vulnerabilities}
+\begin{todoenv}
+  \begin{enumerate}[label=(\alph*)]
+    \item risks/Vulnerabilities of these systems and future trends - network attacks, architectural issues, etc.
+    \item impact on legacy systems vs new systems/equipment
+    \item standards - do they help or hinder, and are they being updated to protect systems?
+  \end{enumerate}
+\end{todoenv}
+
+\pagebreak
+\section{Devices for Future Detailed Assessment}
+The requirement is to propose up to 5 PLC devices that could be used in CNI for further assessment and testing in Phase 2 of the project.
+
+Initially, to assist with identifying potentially suitable PLCs a review of the marketplace of manufacturers was carried out. There is an extensive range of manufacturers, from major international companies to smaller more specialised national companies. There is also a broad range of specialisation. In an attempt to narrow the field, 7 companies were selected. Those selected are all major (or part of major) international companies, which all appear on initial to have expertise in the fields of the power generation and transmission. As such it seems likely that they would have products suitable for this application, not just in terms of being able to supply ruggedized PLCs with capacity for implementing changes, which are robust and compact in design, have reduced maintenance requirements, are easily programmed, and where a variety of programming languages may be expected to be available. They are also more likely to able to supply PLCs that have a higher level of cyber resilience. The requirement for cyber resilience and security (given the project is part of the UK CNI) has meant that companies with a China or Russia connection have been excluded.
+
+The 7 companies chosen form a shortlist from which preferred suitable products will be chosen and are Rockwell Automation/Allen-Bradley, Siemens, ABB, Alstom, General Electric, Modicon (part of Schneider Electric) and Thomson SA.
+
+The project asks that legacy equipment be considered. Establishing a database of legacy systems appears problematic, although given the time and resources this could be undertaken. There is one legacy equipment that can be discarded (at least in the form it was available in 2011) and that is Siemens' S7-300/S7-1200. In preparation for Black Hat, Dillon \citet{pdf:blackhat:siemensscada:20110711} published a paper titled \textit{"Exploiting Siemens Simatic S7 PLCs"}, in which he detailed how significant errors in the implementations of the security mechanisms deployed could be exploited to take control of the PLCs.
+
+What this shows, however, is the need to subject candidate PLCs to a process of resilience testing involving or based on the practice of the US-CERT \textit{(United States Computer Emergency Readiness Team)} and/or \citet{site:ics-cert:standards:20180427}.
+
+The product ranges of the 7 companies have been examined with the following results:
+\subsection{Rockwell Automation/Allen-Bradley PLCs}
+Rockwell Automation/Allen-Bradley supply programmable controllers for large industrial control systems to fit the most demanding application needs. They are designed for distributed or supervisory control applications -- the \href{https://ab.rockwellautomation.com/IO/Chassis-Based/1756-ControlLogix-IO}{\textbf{1756 ControlLogix\textregistered Modules}} \textit{(Chassis, Digital I/O, Analogue I/O, Speciality I/O, Communications, and Compute)} would be a suitable contender for further examination.
+\subsection{Siemens PLCs}
+Siemens offer a range of SIMATIC Controllers, including the \href{https://www.siemens.com/global/en/home/products/automation/systems/industrial/plc/simatic-s7-1500.html}{\textbf{SIMATIC S7-1500 Advanced Controller}} for medium-sized and complex applications. Also available is the \href{https://w3.siemens.com/mcms/distributed-io/en/pages/default.aspx}{\textbf{SIMATIC ET200 Distributed Controller}} for distributed applications. Among other features, Siemens emphasise their Security Integrated approach, which provides Knowledge Protection together with protection against copying and manipulation and extra password protection for access to program content. This would also be a suitable contender for further examination.
+\subsection{ABB PLCs}
+Within their \href{http://new.abb.com/plc/programmable-logic-controllers-plcs/ac500}{\textbf{AC500}} range, ABB offer solutions for high-end applications and some of these devices might also be worth investigating.
+\subsection{General Electric PLCs}
+GE's \href{http://www.geautomation.com/products/pacsystems-rx3i-controller}{\textbf{PACSystems* RX3i}} range appears to have built-in security protocols and a broad suite of cyber security technology and tools to protect against attacks, prevent unauthorised code and application updates, and protect against DOS \textit{(denial-of-service)} attacks. These technologies could be further tested to see if they meet the cyber resilience criteria for CNI applications.
+
+\pagebreak
+\section{Conclusions}
+illusions of conclusions...
+
+
+
+% ------------------------------------------------------------------------------
+% \begin{table}[h!]
+%   \centering
+%   \begin{tabular}{|r l|}
+%     \hline
+%     IP address: & 192.168.254.132 \\
+%     \hline
+%     Operating system: & Linux Ubuntu 4.13.0-17-generic x86\_64 \\
+%     \hline
+%     Open ports: & 80 \textit{[http]}, 442 \textit{[ssh; OpenSSH 7.5p1 Ubuntu 10]} \\
+%     \hline
+%     Closed ports: & 443 \textit{[https]} \\
+%     \hline
+%     Price's groups: & phillip adm cdrom sudo dip www-data plugdev lpadmin sambashare \\
+%     \hline
+%   \end{tabular}
+%   \caption{Information on Price's machine and account}
+%   \label{table:pricemachineinfo}
+% \end{table}
+
+% \begin{Verbatim}[frame=leftline]
+% Loaded 393 passwords from 'passwords.txt'
+% (001/393; 00.25%) Password != '0'
+% (002/393; 00.51%) Password != 'scorpio'
+% (003/393; 00.76%) Password != 'buddy'
+% ...
+% (222/393; 56.49%) Password != 'trustno1'
+% (223/393; 56.74%) Password != 'newyork'
+% (224/393; 57.00%) Password == 'qwertyuiop'
+% Took 0.96 minutes to check 224/393 passwords at a rate of 3.88pw/s.
+% Performing recon...
+% Logging out.
+% \end{Verbatim}
+
+% \begin{Verbatim}[frame=leftline]
+% [User]
+% Language=en_GB
+% FormatsLocale=en_GB.UTF-8
+% XSession=
+% SystemAccount=true
+%
+% [InputSource0]
+% xkb=gb
+% \end{Verbatim}
+% ------------------------------------------------------------------------------
+
+% BIBLIOGRAPHY/REFERENCES
+\pagebreak
+% nocited refs
+% \nocite{example:referenceid:here}
+
+% Insert references section, left aligned
+\begin{flushleft}
+  \bibliography{references}
+\end{flushleft}
+
+
+% APPENDICES
+% Appendix~\ref{app:screenshots:7}
+% \appendix
+
+% \pagebreak
+% \chapter{Screenshot deliverables}
+% \section{\texttt{ifconfig}, \texttt{arp-scan}, and \texttt{nmap}}
+% \label{app:screenshots:1}
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.7\paperheight, angle=-90]{It's_Elementary_my_dear_Watson!-2017-12-06-13-41-10}
+% \end{figure}
+% \pagebreak
+
+% \pagebreak
+% \chapter{File deliverables}
+% \section{\texttt{recon.txt}}
+% \label{app:files:recon}
+% \lstinputlisting[frame=single, basicstyle=\small\ttfamily, showstringspaces=false, breaklines=true, postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space}]{deliverables/files/recon.txt}
