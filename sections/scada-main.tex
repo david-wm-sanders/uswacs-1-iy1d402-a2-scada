@@ -66,13 +66,27 @@ These systems also attempt to reduce the security risks of using proprietary net
 
 \pagebreak
 \section{Security Issues and Vulnerabilities}
-\begin{todoenv}
-  \begin{enumerate}[label=(\alph*)]
-    \item risks/Vulnerabilities of these systems and future trends - network attacks, architectural issues, etc.
-    \item impact on legacy systems vs new systems/equipment
-    \item standards - do they help or hinder, and are they being updated to protect systems?
-  \end{enumerate}
-\end{todoenv}
+As SCADA systems have become more interconnected with other networks, new vulnerabilities from a security point of view have been created. The use of cloud computing has brought operational improvements, but at the same time created new security challenges.
+
+SCADA networks have become more vulnerable to types of network attacks that are relatively common in computer security. Designers, users and operators of SCADA have had to adapt to this new reality and this has taken time. As a consequence systems have been brought into service not fully resilient in these new times.
+
+It is vital that the security of modern SCADA systems is given the attention it needs because the impact of a compromise in the SCADA of a CNI system may extend far into multiple areas of society: a blackout caused by a compromised electrical power SCADA could affect the banking system, ATMs, public transport, hospitals, gas and water supply, to name just some, and have major societal consequences.
+
+Malfunctions can be caused as a result of cyber attacks. Action is being taken to deal with the risks of unauthorised access by developing specialised industrial firewall and VPN solutions for TCP/IP based SCADA networks. Use is also being made of external SCADA monitoring and recording equipment to detect anomalous events. Companies which provide manned ``Security Operations Centres''  (SCOs) can have a role here.
+
+As interest in SCADA vulnerabilities has grown, researchers have found vulnerabilities in commercial SCADA software which need addressing and certification processes will be required which demonstrate that the design of software has met appropriate guidelines and standards.
+
+For example, there is a risk of malware being downloaded onto SCADA systems running on Windows operating systems. Furthermore, some malware is able to steal design and control files and can change the control system and hide the change. As well as making the operating system more resilient, there is a possible role here for SOCs who may be able to detect intrusions.
+
+In distributed SCADA and data collection systems, where there is a large installed base of wired and wireless serial communications links, use may be made of authentication and AES (Advanced Encryption Standard) encryption.
+
+Systems, particular for CNI, should be evaluated to identify risks and solutions implemented to mitigate these risks.
+
+% More information can be found in Thales White Paper “Cyber Security for SCADA Systems”  Autumn 2013 at www.thalescyberassurance.com.
+The whitepaper ``Cyber Security for SCADA Systems'' \citep{pdf:thales:scadacybersec:2013q4} goes into further detail about the security challenges faced in modern connected SCADA installations and how these can be addressed.
+
+For new equipment and systems, it is best to ensure that mitigation against risks is designed in at all stages of a project from the outset. This is known as a ``Secured by Design'' \citep{site:yt-tales:securebydesign:20160714} approach.
+% as described by Alex Towers, Cyber Security Capability Lead in his explanation of Thales Secured by Design Approach (https://events.thalesgroup.com/Farnborough/en/article/763610..)
 
 \pagebreak
 \section{Devices for Future Detailed Assessment}
@@ -96,9 +110,9 @@ Within their \href{http://new.abb.com/plc/programmable-logic-controllers-plcs/ac
 \subsection{General Electric PLCs}
 GE's \href{http://www.geautomation.com/products/pacsystems-rx3i-controller}{\textbf{PACSystems* RX3i}} range appears to have built-in security protocols and a broad suite of cyber security technology and tools to protect against attacks, prevent unauthorised code and application updates, and protect against DOS \textit{(denial-of-service)} attacks. These technologies could be further tested to see if they meet the cyber resilience criteria for CNI applications.
 
-\pagebreak
-\section{Conclusions}
-illusions of conclusions...
+% \pagebreak
+% \section{Conclusions}
+% illusions of conclusions...
 
 
 
